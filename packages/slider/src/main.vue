@@ -183,6 +183,7 @@
       },
 
       onDragging(event) {
+        event.preventDefault();
         if (this.dragging) {
           this.$refs.tooltip.showPopper = true;
           this.currentX = event.clientX;
