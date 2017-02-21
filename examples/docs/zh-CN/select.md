@@ -146,7 +146,8 @@
     <el-option
       v-for="item in options"
       :label="item.label"
-      :value="item.value">
+      :value="item.value"
+      :on-click="handleClick">
     </el-option>
   </el-select>
 </template>
@@ -172,6 +173,11 @@
           label: '北京烤鸭'
         }],
         value: ''
+      }
+    },
+    methods: {
+      handleClick(e, data) {
+        console.log(e, data);
       }
     }
   }

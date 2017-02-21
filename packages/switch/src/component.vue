@@ -1,5 +1,5 @@
 <template>
-  <label class="el-switch" :class="{ 'is-disabled': disabled, 'el-switch--wide': hasText }">
+  <div class="el-switch" :class="{ 'is-disabled': disabled, 'el-switch--wide': hasText }" @click="handleClick">
     <div class="el-switch__mask" v-show="disabled"></div>
     <input
       class="el-switch__input"
@@ -29,7 +29,7 @@
         <span v-if="!offIconClass && offText">{{ offText }}</span>
       </div>
     </transition>
-  </label>
+  </div>
 </template>
 
 <script>
@@ -113,6 +113,12 @@
       },
       handleButtonTransform() {
         this.buttonStyle.transform = this.value ? `translate(${ this.coreWidth - 20 }px, 2px)` : 'translate(2px, 2px)';
+      },
+      handleClick(event) {
+        event.stopPropagation();
+        if (!this.disabled) {
+          this.value = !this.value;
+        }
       },
       setBackgroundColor() {
         let newColor = this.value ? this.onColor : this.offColor;

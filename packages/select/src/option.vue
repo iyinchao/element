@@ -34,6 +34,9 @@
       disabled: {
         type: Boolean,
         default: false
+      },
+      onClick: {
+        type: Function
       }
     },
 
@@ -102,8 +105,14 @@
         }
       },
 
-      selectOptionClick() {
+      selectOptionClick(event) {
         if (this.disabled !== true && this.groupDisabled !== true) {
+          if (this.onClick) {
+            this.onClick(event, {
+              value: this.value,
+              label: this.label
+            });
+          }
           this.dispatch('ElSelect', 'handleOptionClick', this);
         }
       },
