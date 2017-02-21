@@ -117,7 +117,7 @@
       handleClick(event) {
         event.stopPropagation();
         if (!this.disabled) {
-          this.value = !this.value;
+          this._value = !this._value;
         }
       },
       setBackgroundColor() {
