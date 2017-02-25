@@ -115,8 +115,8 @@
 
 :::demo 在`trigger`属性设置为`click`即可。
 ```html
-<el-row class="block-col-2">
-  <el-col :span="12">
+<el-row class="block-col-3">
+  <el-col :span="8">
     <span class="demonstration">hover 激活</span>
     <el-dropdown>
       <span class="el-dropdown-link">
@@ -131,7 +131,7 @@
       </el-dropdown-menu>
     </el-dropdown>
   </el-col>
-  <el-col :span="12">
+  <el-col :span="8">
     <span class="demonstration">click 激活</span>
     <el-dropdown trigger="click">
       <span class="el-dropdown-link">
@@ -143,6 +143,28 @@
         <el-dropdown-item>螺蛳粉</el-dropdown-item>
         <el-dropdown-item>双皮奶</el-dropdown-item>
         <el-dropdown-item>蚵仔煎</el-dropdown-item>
+      </el-dropdown-menu>
+    </el-dropdown>
+  </el-col>
+  <el-col :span="8">
+    <span class="demonstration">click 激活</span>
+    <el-dropdown trigger="click">
+      <span class="el-dropdown-link">
+        下拉菜单<i class="el-icon-caret-bottom el-icon--right"></i>
+      </span>
+      <el-dropdown-menu slot="dropdown">
+        <el-tabs type="border-card">
+          <el-tab-pane label="test1">
+            <el-select v-model="value" placeholder="请选择">
+              <el-option
+                v-for="item in options"
+                :label="item.label"
+                :value="item.value">
+              </el-option>
+            </el-select>
+          </el-tab-pane>
+          <el-tab-pane label="test2"></el-tab-pane>
+        </el-tabs>
       </el-dropdown-menu>
     </el-dropdown>
   </el-col>

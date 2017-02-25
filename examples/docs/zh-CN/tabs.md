@@ -24,7 +24,24 @@
           name: '2',
           content: 'Tab 2 content'
         }],
-        tabIndex: 2
+        tabIndex: 2,
+        options: [{
+          value: '选项1',
+          label: '黄金糕'
+        }, {
+          value: '选项2',
+          label: '双皮奶'
+        }, {
+          value: '选项3',
+          label: '蚵仔煎'
+        }, {
+          value: '选项4',
+          label: '龙须面'
+        }, {
+          value: '选项5',
+          label: '北京烤鸭'
+        }],
+        value: ''
       }
     },
     methods: {
@@ -164,7 +181,16 @@
 :::demo 将`type`设置为`border-card`。
 ```html
 <el-tabs type="border-card">
-  <el-tab-pane label="用户管理">用户管理</el-tab-pane>
+  <el-tab-pane label="用户管理">
+    用户管理
+    <el-select v-model="value" placeholder="请选择">
+        <el-option
+        v-for="item in options"
+        :label="item.label"
+        :value="item.value">
+      </el-option>
+    </el-select>
+  </el-tab-pane>
   <el-tab-pane label="配置管理">配置管理</el-tab-pane>
   <el-tab-pane label="角色管理">角色管理</el-tab-pane>
   <el-tab-pane label="定时任务补偿">定时任务补偿</el-tab-pane>

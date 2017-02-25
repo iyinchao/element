@@ -1,12 +1,11 @@
 import Vue from 'vue';
 import { on } from 'element-ui/src/utils/dom';
-
 const nodeList = [];
 const ctx = '@@clickoutsideContext';
 
 !Vue.prototype.$isServer && on(document, 'click', e => {
   nodeList.forEach(node => node[ctx].documentHandler(e));
-});
+}, true);
 /**
  * v-clickoutside
  * @desc 点击元素外面才会触发的事件
