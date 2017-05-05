@@ -662,7 +662,9 @@
         }
       });
     },
-
+    // updated() {
+    //   debugger;
+    // },
     destroyed() {
       if (this.handleResize) removeResizeListener(this.$el, this.handleResize);
     }

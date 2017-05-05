@@ -146,8 +146,7 @@
     <el-option
       v-for="item in options"
       :label="item.label"
-      :value="item.value"
-      :on-click="handleClick">
+      :value="item.value">
     </el-option>
   </el-select>
 </template>
