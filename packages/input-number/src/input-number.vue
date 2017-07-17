@@ -131,6 +131,7 @@
         return parseFloat(parseFloat(Number(num).toFixed(precision)));
       },
       getPrecision(value) {
+        if(!value) return 0;
         const valueString = value.toString();
         const dotPosition = valueString.indexOf('.');
         let precision = 0;
